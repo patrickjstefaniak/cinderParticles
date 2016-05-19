@@ -24,7 +24,7 @@ void particles1App::setup()
 {
     setWindowSize(800,600);
     
-    pC = particleControl(1);
+    pC = particleControl(0);
     cam.setPerspective(60,getWindowAspectRatio(), 1, 1000);
     gl::setMatrices(cam);
     cam.lookAt(vec3(getWindowWidth()/2, getWindowHeight()/2, 200), vec3(getWindowWidth()/2, getWindowHeight()/2, 0));
@@ -32,7 +32,7 @@ void particles1App::setup()
 
 void particles1App::mouseMove( MouseEvent event )
 {
-
+    pC.mMove(event.getPos());
 }
 void particles1App::mouseDown( MouseEvent event)
 {

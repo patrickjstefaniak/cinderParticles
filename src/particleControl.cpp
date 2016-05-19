@@ -18,10 +18,10 @@ using namespace std;
 particleControl::particleControl(int n){
 
     for(int count = n; count >= 0; count --){
-        particle p = particle(0, 0);
+        particle p = particle(0,0);
         mParticles.push_back(p);
     }
-    
+    mousePos = getWindowCenter();
     
     
 }
@@ -34,20 +34,41 @@ void particleControl::draw(){
 
 void particleControl::update(){
     for(list<particle>::iterator p = mParticles.begin(); p != mParticles.end();){
-        if(!(p->alive)){
-            p =  mParticles.erase(p);
-        }else{
-            p->update();
-            ++p;
+        //if(!(p->alive)){
+         //   p =  mParticles.erase(p);
+        //}else{
+        
+            list<particle>::iterator q = p;
+            for(++q; q != mParticles.end(); ++q){
+                vec2 dis = p->pos - q->pos;
+                float disSq = glm::distance2(p->pos, q->pos);
+                if(disSq > 5){
+                    dis = glm::normalize(dis);
+                    float f = 1.0f / disSq;
+                    p->repel += f * dis / p->mass;
+                    q->repel -= f * dis / q->mass;
+                }
+                
+            //}
+            
         }
+        p->update(mousePos);
+        ++p;
     }
 }
 
 void particleControl::clicked(vec2 m){
     create(m);
+    if(mParticles.size() > 100){
+        mParticles.erase(mParticles.begin());
+    }
 }
 
 void particleControl::create(vec2 mpos){
-    particle p = particle(mpos.x, mpos.y);
+    particle p = particle(mpos.x, mpos.y );
     mParticles.push_back(p);
+}
+
+void particleControl::mMove(vec2 m){
+    mousePos = m;
 }

@@ -5,6 +5,7 @@
 //  Created by Patrick Stefaniak on 5/18/16.
 //
 //
+#include "cinder/Perlin.h"
 
 using namespace ci;
 using namespace ci::app;
@@ -18,9 +19,10 @@ public:
     particle (float x, float y);
     
     void draw();
-    void update();
+    void update(vec2 m);
     
-    float size, speed;
-    vec2 dir, pos;
+    float size, speed, mass;
+    vec2 dir, pos, repel;
     bool alive;
+    Perlin perl;
 };

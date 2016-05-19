@@ -25,7 +25,9 @@ public:
     void update();
     void initialize();
     void clicked(vec2 m);
+    void mMove(vec2 m);
     
     std::list<particle> mParticles;
     vec2                mousePos;
+    
 };
