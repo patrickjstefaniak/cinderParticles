@@ -41,6 +41,8 @@ void particle::draw(){
 }
 
 void particle::update(vec2 m){
+    
+    //attract towards mouse
     dir = m - pos;
     vec2 dirN;
     if(dir != vec2(0,0)){
@@ -50,16 +52,18 @@ void particle::update(vec2 m){
     
     
     
-    if(glm::length(dir) < 30){
-        pos = pos - (dirN * speed);
+    if(glm::length(dir) < 20){
+        //pos = pos - (dirN * speed);
     }else{
         pos = pos + (dirN * speed);
     }
     
     
+    
+    //repel from other particles
     float repelL = glm::length(repel);
     
-    
+    //make sure they are moving , but not too fast
     if(repelL  > 20.0f){
         repel = glm::normalize(repel);
         repel = repel * 20.0f;
@@ -71,6 +75,21 @@ void particle::update(vec2 m){
     
     pos += repel ;
     repel = vec2(0,0);
+    
+    vec2 perp = vec2(- dirN.y, dirN.x);
+    pos += perp / 5.0f;
+    
+    
+    if(pos.x < 0){
+        pos.x = 0;
+    }else if(pos.x > getWindowWidth()){
+        pos.x = getWindowWidth();
+    }
+    if(pos.y < 0){
+        pos.y = 0;
+    }else if(pos.y > getWindowHeight()){
+        pos.y = getWindowHeight();
+    }
     
     //float t = app::getElapsedSeconds() * 0.01f;
     //vec3 per = vec3(pos.x, pos.y, t);
