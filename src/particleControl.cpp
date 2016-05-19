@@ -42,9 +42,10 @@ void particleControl::update(){
             for(++q; q != mParticles.end(); ++q){
                 vec2 dis = p->pos - q->pos;
                 float disSq = glm::distance2(p->pos, q->pos);
-                if(disSq > 5){
-                    dis = glm::normalize(dis);
-                    float f = 1.0f / disSq;
+                float radSq = 5000;
+                if(disSq < radSq){
+                    float f = (radSq/disSq - 1.0f) * 0.01f;
+                    dis = glm::normalize(dis) * f;
                     p->repel += f * dis / p->mass;
                     q->repel -= f * dis / q->mass;
                 }

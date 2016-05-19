@@ -24,7 +24,7 @@ particle::particle(float x, float y){
     dir = vec2(getWindowWidth()/2, getWindowHeight()/2) - vec2(x,y);
     dir = glm::normalize(dir);
     repel = vec2(0);
-    mass = (rand() % 20) + 1;
+    mass = (rand() % 200) + 1;
     //cout << mass << "   " ;
     //mass = 1;
     perl = Perlin();
@@ -57,14 +57,25 @@ void particle::update(vec2 m){
     }
     
     
-    float rSpeed = 200;
-    pos += repel * rSpeed;
+    float repelL = glm::length(repel);
+    
+    
+    if(repelL  > 20.0f){
+        repel = glm::normalize(repel);
+        repel = repel * 20.0f;
+        
+    }else if(repelL  < 2.0f && repelL != 0){
+        repel = glm::normalize(repel);
+        repel = repel * 2.0f;
+    }
+    
+    pos += repel ;
     repel = vec2(0,0);
     
-    float t = app::getElapsedSeconds() * 0.01f;
-    vec3 per = vec3(pos.x, pos.y, t);
-    float noise = perl.fBm(per) * 15 ;
-    pos += vec2(cos(noise) , sin(noise) );
+    //float t = app::getElapsedSeconds() * 0.01f;
+    //vec3 per = vec3(pos.x, pos.y, t);
+    //float noise = perl.fBm(per) * 15 ;
+    //pos += vec2(cos(noise) , sin(noise) );
     
     //cout << pos << "    ";
     //if(distance(pos, getWindowCenter()) < size){
