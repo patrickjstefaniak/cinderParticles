@@ -16,12 +16,12 @@
 		00B784B60FF439BC000DE1D7 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B784B20FF439BC000DE1D7 /* CoreAudio.framework */; };
 		00B9955A1B128DF400A5C623 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995581B128DF400A5C623 /* IOKit.framework */; };
 		00B9955B1B128DF400A5C623 /* IOSurface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00B995591B128DF400A5C623 /* IOSurface.framework */; };
+		4A29EDF41CED0FEB00E6B4DD /* particleControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A29EDF31CED0FEB00E6B4DD /* particleControl.cpp */; };
+		4A29EDF81CED100C00E6B4DD /* particle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4A29EDF71CED100C00E6B4DD /* particle.cpp */; };
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		8C7F1D840B2441C4BA0AFFCA /* particles1_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 18B2104C4D3B4A28ACCF2E04 /* particles1_Prefix.pch */; };
-		DC17FAD8BAE5486FAF3F9BAE /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = DBA1E945348E4368AB031A15 /* CinderApp.icns */; };
-		62189470D1914BA6AECDCA2A /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 9293B8F36CDC410690EA4039 /* Resources.h */; };
 		BD65C2E3E862411CB2530EB7 /* particles1App.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 23DEB60CEF624FA39F48521C /* particles1App.cpp */; };
+		DC17FAD8BAE5486FAF3F9BAE /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = DBA1E945348E4368AB031A15 /* CinderApp.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,15 +35,19 @@
 		00B995581B128DF400A5C623 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		00B995591B128DF400A5C623 /* IOSurface.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOSurface.framework; path = System/Library/Frameworks/IOSurface.framework; sourceTree = SDKROOT; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		18B2104C4D3B4A28ACCF2E04 /* particles1_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = particles1_Prefix.pch; sourceTree = "<group>"; };
+		23DEB60CEF624FA39F48521C /* particles1App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; name = particles1App.cpp; path = ../src/particles1App.cpp; sourceTree = "<group>"; };
 		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		4A29EDF31CED0FEB00E6B4DD /* particleControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = particleControl.cpp; path = ../src/particleControl.cpp; sourceTree = "<group>"; };
+		4A29EDF51CED0FF600E6B4DD /* particleControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = particleControl.h; sourceTree = "<group>"; };
+		4A29EDF61CED100100E6B4DD /* particle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = particle.h; sourceTree = "<group>"; };
+		4A29EDF71CED100C00E6B4DD /* particle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = particle.cpp; sourceTree = "<group>"; };
 		5323E6B10EAFCA74003A9687 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
 		8D1107320486CEB800E47090 /* particles1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = particles1.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		23DEB60CEF624FA39F48521C /* particles1App.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.cpp; path = ../src/particles1App.cpp; sourceTree = "<group>"; name = particles1App.cpp; };
-		9293B8F36CDC410690EA4039 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ../include/Resources.h; sourceTree = "<group>"; name = Resources.h; };
-		DBA1E945348E4368AB031A15 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; name = CinderApp.icns; };
-		99F5E221C1A54B44B4CA52B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; name = Info.plist; };
-		18B2104C4D3B4A28ACCF2E04 /* particles1_Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = "\"\""; path = particles1_Prefix.pch; sourceTree = "<group>"; name = particles1_Prefix.pch; };
+		9293B8F36CDC410690EA4039 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
+		99F5E221C1A54B44B4CA52B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBA1E945348E4368AB031A15 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01B97315FEAEA392516A2CEA /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Blocks;
+			sourceTree = "<group>";
+		};
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				23DEB60CEF624FA39F48521C /* particles1App.cpp */,
+				4A29EDF31CED0FEB00E6B4DD /* particleControl.cpp */,
+				4A29EDF51CED0FF600E6B4DD /* particleControl.h */,
+				4A29EDF61CED100100E6B4DD /* particle.h */,
+				4A29EDF71CED100C00E6B4DD /* particle.cpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -122,13 +137,6 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
 			name = particles1;
-			sourceTree = "<group>";
-		};
-		01B97315FEAEA392516A2CEA /* Blocks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Blocks;
 			sourceTree = "<group>";
 		};
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
@@ -184,6 +192,8 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "particles1" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -220,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD65C2E3E862411CB2530EB7 /* particles1App.cpp in Sources */,
+				4A29EDF41CED0FEB00E6B4DD /* particleControl.cpp in Sources */,
+				4A29EDF81CED100C00E6B4DD /* particle.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,17 +242,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = particles1_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = particles1_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -262,12 +274,12 @@
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
 				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = particles1_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"NDEBUG=1",
 					"$(inherited)",
 				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = particles1_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -284,7 +296,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../dropShadow/Cinder";
+				CINDER_PATH = ../../dropShadow/Cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				ENABLE_TESTABILITY = YES;
@@ -302,7 +314,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CINDER_PATH = "../../dropShadow/Cinder";
+				CINDER_PATH = ../../dropShadow/Cinder;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++11";
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
