@@ -20,11 +20,11 @@ public:
     particleControl (int num);
     
     void draw();
-    void create();
+    void create(vec2 mpos);
     void destroy();
-    void update(vec2 mpos);
+    void update();
     void initialize();
-    void clicked();
+    void clicked(vec2 m);
     
     std::list<particle> mParticles;
     vec2                mousePos;

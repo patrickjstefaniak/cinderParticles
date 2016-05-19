@@ -17,11 +17,10 @@ public:
     particle () {}
     particle (float x, float y);
     
-    void draw(vec2 mpos);
+    void draw();
     void update();
     
-    float size;
-    int posx, posy;
-    
-    bool tann;
+    float size, speed;
+    vec2 dir, pos;
+    bool alive;
 };

@@ -16,30 +16,38 @@ using namespace ci::app;
 using namespace std;
 
 particleControl::particleControl(int n){
-    float xnum = getWindowWidth() /30;
-    float ynum = getWindowHeight() /30 ;
-    mousePos = vec2(0,0);
-    
-    for(int x = 0; x <= xnum ; x++){
-        for(int y = 0; y <= ynum ; y++){
-            mParticles.push_back(particle((x * 30) , (y * 30)  ));
-        }
+
+    for(int count = n; count >= 0; count --){
+        particle p = particle(0, 0);
+        mParticles.push_back(p);
     }
+    
+    
     
 }
 
 void particleControl::draw(){
     for(particle &p: mParticles){
-        p.draw(mousePos);
+        p.draw();
     }
 }
 
-void particleControl::update(vec2 m){
-    mousePos = m;
+void particleControl::update(){
+    for(list<particle>::iterator p = mParticles.begin(); p != mParticles.end();){
+        if(!(p->alive)){
+            p =  mParticles.erase(p);
+        }else{
+            p->update();
+            ++p;
+        }
+    }
 }
 
-void particleControl::clicked(){
-    for(particle &p: mParticles){
-        p.tann = ! p.tann;
-    }
+void particleControl::clicked(vec2 m){
+    create(m);
+}
+
+void particleControl::create(vec2 mpos){
+    particle p = particle(mpos.x, mpos.y);
+    mParticles.push_back(p);
 }
