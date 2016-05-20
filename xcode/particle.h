@@ -21,8 +21,8 @@ public:
     void draw();
     void update(vec2 m);
     
-    float size, speed, mass;
-    vec2 dir, pos, repel;
-    bool alive;
-    Perlin perl;
+    float       size, speed, mass;
+    vec2        dir, pos, repel, prevPPos;
+    bool        alive;
+    Perlin      perl;
 };

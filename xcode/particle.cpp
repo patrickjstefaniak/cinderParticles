@@ -28,15 +28,17 @@ particle::particle(float x, float y){
     //cout << mass << "   " ;
     //mass = 1;
     perl = Perlin();
-    
+    prevPPos = pos;
 }
+
+
 
 void particle::draw(){
    
     
 
     gl::drawSphere(vec3(pos.x,pos.y,0), size);
-
+    gl::drawVector(vec3(pos.x, pos.y, 0.0), vec3(prevPPos.x, prevPPos.y, 0.0));
     
 }
 
@@ -53,7 +55,7 @@ void particle::update(vec2 m){
     
     
     if(glm::length(dir) < 20){
-        //pos = pos - (dirN * speed);
+        pos = pos - (dirN * speed);
     }else{
         pos = pos + (dirN * speed);
     }

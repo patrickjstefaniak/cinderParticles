@@ -18,8 +18,8 @@ using namespace std;
 particleControl::particleControl(int n){
 
     for(int count = n; count >= 0; count --){
-        particle p = particle(0,0);
-        mParticles.push_back(p);
+            particle p = particle(0,0);
+            mParticles.push_back(p);
     }
     mousePos = getWindowCenter();
     
@@ -38,13 +38,14 @@ void particleControl::update(){
          //   p =  mParticles.erase(p);
         //}else{
         
-        
         //radius of sphere of influence for particle
         float zoneRadius = 300;
-        
+        vec2 closest = vec2(100000,100000);
             list<particle>::iterator q = p;
             for(++q; q != mParticles.end(); ++q){
-                
+                if(distance(p->pos, closest) > distance(p->pos, q->pos)){
+                    closest = q->pos;
+                }
                 vec2 dis = p->pos - q->pos;
                 float disSq = glm::distance2(p->pos, q->pos);
                 //percentage of position in sphere of other particle
@@ -82,6 +83,12 @@ void particleControl::update(){
             
         }
         p->update(mousePos);
+        
+        p->prevPPos = closest;
+            
+        if(p->prevPPos == vec2(100000,100000)){
+            p->prevPPos = p->pos;
+        }
         ++p;
     }
 }
